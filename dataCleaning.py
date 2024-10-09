@@ -64,8 +64,11 @@ stopwords = load_stopwords('stopwords.txt')
 # read dataset
 dataFrame = pd.read_csv('dataset.csv')
 
-# Fill NaN values in 'review_text' column with an empty string
-dataFrame['review_text'] = dataFrame['review_text'].fillna("")
+# Remove rows with NaN in 'app_name' or 'review_text'
+dataFrame = dataFrame.dropna(subset=['app_name', 'review_text'])
+
+# Drop 'app_id' and 'review_votes' columns
+dataFrame = dataFrame.drop(columns=['app_id', 'review_votes'])
 
 # apply preprocessing to 'review_text' column
 dataFrame['review_text'] = dataFrame['review_text'].apply(preprocess_text)
@@ -73,5 +76,5 @@ dataFrame['review_text'] = dataFrame['review_text'].apply(preprocess_text)
 # save the cleaned dataset
 dataFrame.to_csv('processed_dataset.csv', index=False)
 
-# print 10 first entries
+# print the first 10 entries
 print(dataFrame.head(10))
