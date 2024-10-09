@@ -2,6 +2,4 @@ original dataset: https://www.kaggle.com/datasets/andrewmvd/steam-reviews/data
 
 preprocessed datasets: https://drive.google.com/drive/folders/1i6v6Y2Eixsh2adrs3az0v0vGZH2AkXPT?usp=sharing
 
-- processed_dataset: cleaned data from the original dataset
-- processed_dataset_undersampled: undersampled data from processed_dataset
-- processed_dataset_undersampled_1M: randomly sliced 1M data entries from processed_dataset_undersampled
+- cleaned_dataset_no_EAR_undersampled_1M: data without NaN, app_id, review_votes, "Early Access Review", undersampled, 1 Million entries.
