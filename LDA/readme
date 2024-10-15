@@ -1,0 +1,13 @@
+1. import datasets in the dataset folder
+
+2. activate virtual env: source .venv/bin/activate
+
+3. npm i
+
+
+Package specification:
+spacy 2.1
+gensim 4.0.1
+pyLDAvis 3.2.0
+
+
